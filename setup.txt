@@ -21,3 +21,5 @@ wget -qO- https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
 cd LTX-Video-Trainer
 uv sync
+
+pip install accelerate

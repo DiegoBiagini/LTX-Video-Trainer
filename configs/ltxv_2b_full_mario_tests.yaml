@@ -44,7 +44,7 @@ validation:
   negative_prompt: "worst quality, inconsistent motion, blurry, jittery, distorted"
   images:
     - "/media/biagini/Data2/MarioWM/LTX_Dataset/test_images/000206.png"
-    - "/media/biagini/Data2/MarioWM/LTX_Dataset/test_images/000948.png"] # Set to a list of image paths to use first-frame conditioning, or null to disable
+    - "/media/biagini/Data2/MarioWM/LTX_Dataset/test_images/000948.png" # Set to a list of image paths to use first-frame conditioning, or null to disable
   video_dims: [512, 512, 121] # [width, height, frames]
   seed: 42
   inference_steps: 50
