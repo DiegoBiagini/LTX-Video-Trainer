@@ -73,7 +73,6 @@ wandb:
   project: "MarioWM"
   entity: biagini  # Your W&B username or team
   tags: []
-  name: "ltxvideo_512x512x121_base"
   log_model: false
   log_validation_videos: true
 
