@@ -258,17 +258,6 @@ wheels = [
 ]
 
 [[package]]
-name = "decord"
-version = "0.6.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "numpy", marker = "sys_platform != 'darwin'" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/11/79/936af42edf90a7bd4e41a6cac89c913d4b47fa48a26b042d5129a9242ee3/decord-0.6.0-py3-none-manylinux2010_x86_64.whl", hash = "sha256:51997f20be8958e23b7c4061ba45d0efcd86bffd5fe81c695d0befee0d442976", size = 13602299, upload_time = "2021-06-14T21:30:55.486Z" },
-]
-
-[[package]]
 name = "diffusers"
 version = "0.33.1"
 source = { registry = "https://pypi.org/simple" }
@@ -570,7 +559,6 @@ source = { editable = "." }
 dependencies = [
     { name = "accelerate" },
     { name = "av" },
-    { name = "decord", marker = "sys_platform == 'linux'" },
     { name = "diffusers" },
     { name = "gradio" },
     { name = "imageio" },
@@ -603,7 +591,6 @@ dev = [
 requires-dist = [
     { name = "accelerate", specifier = ">=1.2.1" },
     { name = "av", specifier = ">=14.2.1" },
-    { name = "decord", marker = "sys_platform == 'linux'", specifier = ">=0.6.0" },
     { name = "diffusers", specifier = ">=0.32.1" },
     { name = "gradio", specifier = "==5.33.0" },
     { name = "imageio", specifier = ">=2.37.0" },
