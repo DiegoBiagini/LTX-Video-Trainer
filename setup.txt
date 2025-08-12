@@ -1,0 +1,13 @@
+Put all the video in the same folder 
+# Use script /media/biagini/Data2/MarioWM/copy_mp4.sh
+
+Split them 
+# Use script scripts/simple_split.py
+python scripts/simple_split.py split target_folder target_folder/splits -f 121 
+
+"Generate" dataset.json
+python build_dataset_json.py target_folder/splits
+
+
+Preprocess
+python scripts/preprocess_dataset.py target_folder/splits/dataset.json --resolution-buckets 512x512x121 --caption-column caption --video-column media_path --model-source "LTXV_2B_0.9.5"
