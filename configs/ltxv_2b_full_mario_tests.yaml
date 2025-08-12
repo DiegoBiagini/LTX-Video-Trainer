@@ -73,7 +73,6 @@ wandb:
   project: "MarioWM"
   entity: biagini  # Your W&B username or team
   tags: []
-  log_model: false
   log_validation_videos: true
 
 # General configuration
