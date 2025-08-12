@@ -570,7 +570,6 @@ source = { editable = "." }
 dependencies = [
     { name = "accelerate" },
     { name = "av" },
-    { name = "bitsandbytes", marker = "sys_platform == 'linux'" },
     { name = "decord", marker = "sys_platform == 'linux'" },
     { name = "diffusers" },
     { name = "gradio" },
@@ -604,7 +603,6 @@ dev = [
 requires-dist = [
     { name = "accelerate", specifier = ">=1.2.1" },
     { name = "av", specifier = ">=14.2.1" },
-    { name = "bitsandbytes", marker = "sys_platform == 'linux'", specifier = ">=0.45.2" },
     { name = "decord", marker = "sys_platform == 'linux'", specifier = ">=0.6.0" },
     { name = "diffusers", specifier = ">=0.32.1" },
     { name = "gradio", specifier = "==5.33.0" },
