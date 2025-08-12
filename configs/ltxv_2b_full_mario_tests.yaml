@@ -33,7 +33,7 @@ acceleration:
 
 # Data configuration
 data:
-  preprocessed_data_root: "/mnt/b/Storage_10/dev_diego/WM/splits/dataset.json"
+  preprocessed_data_root: "/mnt/b/Storage_10/dev_diego/WM/splits"
   num_dataloader_workers: 2
 
 # Validation configuration
