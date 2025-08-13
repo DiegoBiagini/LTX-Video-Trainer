@@ -43,8 +43,8 @@ validation:
     - "In the video, Mario is seen running across a level with a clear blue sky and green hills in the background. He jumps over obstacles and collects coins while avoiding enemies like Goombas."
   negative_prompt: "worst quality, inconsistent motion, blurry, jittery, distorted"
   images:
-    - "/media/biagini/Data2/MarioWM/LTX_Dataset/test_images/000206.png"
-    - "/media/biagini/Data2/MarioWM/LTX_Dataset/test_images/000948.png" # Set to a list of image paths to use first-frame conditioning, or null to disable
+    - "/mnt/b/Storage_10/dev_diego/WM/test_images/000206.png"
+    - "/mnt/b/Storage_10/dev_diego/WM/test_images/000948.png" # Set to a list of image paths to use first-frame conditioning, or null to disable
   video_dims: [512, 512, 121] # [width, height, frames]
   seed: 42
   inference_steps: 50
