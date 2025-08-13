@@ -18,7 +18,7 @@ optimization:
   batch_size: 4
   gradient_accumulation_steps: 2
   max_grad_norm: 1.0
-  optimizer_type: "adamw" # Use 8-bit optimizer to save memory
+  optimizer_type: "adamw8bit" # Use 8-bit optimizer to save memory
   scheduler_type: "cosine_with_restarts" # Options: "constant", "linear", "cosine", "cosine_with_restarts", "polynomial"
   scheduler_params: {}
   enable_gradient_checkpointing: false # Enable to save memory
