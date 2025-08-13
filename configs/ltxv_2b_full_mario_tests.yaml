@@ -15,8 +15,8 @@ conditioning:
 optimization:
   learning_rate: 1e-5 # Lower learning rate for full fine-tuning
   steps: 100000
-  batch_size: 1
-  gradient_accumulation_steps: 4
+  batch_size: 4
+  gradient_accumulation_steps: 2
   max_grad_norm: 1.0
   optimizer_type: "adamw" # Use 8-bit optimizer to save memory
   scheduler_type: "cosine_with_restarts" # Options: "constant", "linear", "cosine", "cosine_with_restarts", "polynomial"
