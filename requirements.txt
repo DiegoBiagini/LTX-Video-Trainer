@@ -9,7 +9,7 @@ imageio-ffmpeg>=0.6.0
 opencv-python>=4.11.0.86
 optimum-quanto>=0.2.6
 pandas>=2.2.3
-peft>=0.14.0
+peft>=0.15.0
 pillow-heif>=0.21.0
 protobuf>=5.29.3
 pydantic>=2.10.4
@@ -22,3 +22,4 @@ torch>=2.6.0
 torchvision>=0.21.0
 typer>=0.15.1
 wandb>=0.19.11
+typer
