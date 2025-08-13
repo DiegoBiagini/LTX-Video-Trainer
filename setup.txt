@@ -23,3 +23,8 @@ uv sync
 git checkout mariowm
 
 source .venv/bin/activate
+
+uv add deepspeed
+uv add transformer_engine[pytorch]
+
+python scripts/train.py configs/

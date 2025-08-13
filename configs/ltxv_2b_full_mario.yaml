@@ -15,10 +15,10 @@ conditioning:
 optimization:
   learning_rate: 1e-5 # Lower learning rate for full fine-tuning
   steps: 100000
-  batch_size: 1
-  gradient_accumulation_steps: 4
+  batch_size: 4
+  gradient_accumulation_steps: 2
   max_grad_norm: 1.0
-  optimizer_type: "adamw" # Use 8-bit optimizer to save memory
+  optimizer_type: "adamw8bit" # Use 8-bit optimizer to save memory
   scheduler_type: "cosine_with_restarts" # Options: "constant", "linear", "cosine", "cosine_with_restarts", "polynomial"
   scheduler_params: {}
   enable_gradient_checkpointing: false # Enable to save memory
@@ -26,14 +26,14 @@ optimization:
 # Acceleration optimization
 acceleration:
   mixed_precision_mode: "bf16" # Options: "no", "fp16", "bf16"
-  quantization: null # Disable quantization for full fine-tuning
-  load_text_encoder_in_8bit: true # Load text encoder in 8-bit precision to save memory
-  compile_with_inductor: true
+  #quantization: "null" # Disable quantization for full fine-tuning
+  load_text_encoder_in_8bit: false # Load text encoder in 8-bit precision to save memory
+  compile_with_inductor: false
   compilation_mode: "reduce-overhead" # Options: "default", "reduce-overhead", "max-autotune"
 
 # Data configuration
 data:
-  preprocessed_data_root: "/media/biagini/Data2/MarioWM/LTX_Dataset/splits"
+  preprocessed_data_root: "/mnt/B/Storage_10/dev_diego/WM/splits"
   num_dataloader_workers: 2
 
 # Validation configuration
@@ -43,8 +43,8 @@ validation:
     - "In the video, Mario is seen running across a level with a clear blue sky and green hills in the background. He jumps over obstacles and collects coins while avoiding enemies like Goombas."
   negative_prompt: "worst quality, inconsistent motion, blurry, jittery, distorted"
   images:
-    - "/media/biagini/Data2/MarioWM/LTX_Dataset/test_images/000206.png"
-    - "/media/biagini/Data2/MarioWM/LTX_Dataset/test_images/000948.png"] # Set to a list of image paths to use first-frame conditioning, or null to disable
+    - "/mnt/B/Storage_10/dev_diego/WM/test_images/000206.png"
+    - "/mnt/B/Storage_10/dev_diego/WM/test_images/000948.png" # Set to a list of image paths to use first-frame conditioning, or null to disable
   video_dims: [512, 512, 121] # [width, height, frames]
   seed: 42
   inference_steps: 50
@@ -66,17 +66,14 @@ flow_matching:
 hub:
   push_to_hub: false # Whether to push the model weights to the Hugging Face Hub
   hub_model_id: null # Hugging Face Hub repository ID (e.g., 'username/repo-name'). Must be provided if `push_to_hub` is set to True
-
 # W&B configuration
 wandb:
-  enabled: false  # Set to true to enable W&B logging
+  enabled: true  # Set to true to enable W&B logging
   project: "MarioWM"
-  entity: biagini  # Your W&B username or team
+  entity: ''  # Your W&B username or team
   tags: []
-  name: "ltxvideo_512x512x121_base"
-  log_model: false
   log_validation_videos: true
 
 # General configuration
 seed: 42
-output_dir: "outputs/ltxv_full_finetune"
+output_dir: "/mnt/B/Storage_10/dev_diego/WM/outputs/ltxv_full_finetune"
